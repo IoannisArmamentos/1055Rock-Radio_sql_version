@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">1055 Rock</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="playingnow">PLAYING NOW</string>
+    <string name="isonline">Για να λειτουργήσει η εφαρμογή απαιτείται πρόσβαση στο Internet.Παρακαλώ ενεργοποιήστε το WiFi ή τα Δεδομένα Δικτύου(3G/4G).</string>
+    <string name="unabletoconnect">Αδύνατη η σύνδεση</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="app_description">1055 Rock LiveStream</string>
+    <string name="exit">Έξοδος</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_item_home">Αρχική</string>
+    <string name="nav_item_program">Πρόγραμμα</string>
+    <string name="nav_item_producers">Παραγωγοί</string>
+    <string name="nav_item_contact">Επικοινωνία</string>
+    <string name="nav_item_settings"> Ρυθμίσεις</string>
+    <string name="nav_item_about">Σχετικά</string>
+    <string name="nav_item_exit"> Έξοδος</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+
+    <string name="share">"Το 1055 Rock τώρα και για Android! www.kati.com"</string>
+
+    <!-- String related to About -->
+    <string name="title_activity_about">Σχετικά</string>
+    <string name="about_version">Version: </string>
+    <string name="about_email_intent">About:MaterialDesign</string>
+    <string name="about_not_found_email">Not found email app</string>
+    <string name="about_card1_title">Material Design Demo</string>
+    <string name="about_card1_message">Hey, glad to see you! Thanks for using the app.</string>
+    <string name="about_card2_title">Επικοινωνήστε μαζί μου!</string>
+    <string name="about_google_play">Google Play Store</string>
+    <string name="about_email">E-mail</string>
+</resources>
