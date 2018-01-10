@@ -3,7 +3,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="playingnow">PLAYING NOW</string>
-    <string name="isonline">Για να λειτουργήσει η εφαρμογή απαιτείται πρόσβαση στο Internet.Παρακαλώ ενεργοποιήστε το WiFi ή τα Δεδομένα Δικτύου(3G/4G).</string>
+    <string name="isonline">Για να λειτουργήσει η εφαρμογή απαιτείται πρόσβαση στο Internet.\nΠαρακαλώ ενεργοποιήστε το WiFi ή τα Δεδομένα Δικτύου(3G/4G).</string>
     <string name="unabletoconnect">Αδύνατη η σύνδεση</string>
     <string name="settings">Ρυθμίσεις</string>
     <string name="app_description">1055 Rock LiveStream</string>
@@ -16,21 +16,82 @@
     <string name="nav_item_program">Πρόγραμμα</string>
     <string name="nav_item_producers">Παραγωγοί</string>
     <string name="nav_item_contact">Επικοινωνία</string>
-    <string name="nav_item_settings"> Ρυθμίσεις</string>
+    <string name="nav_item_settings">Ρυθμίσεις</string>
     <string name="nav_item_about">Σχετικά</string>
     <string name="nav_item_exit"> Έξοδος</string>
-    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_main_menu">1055 Rock</string>
 
-    <string name="share">"Το 1055 Rock τώρα και για Android! www.kati.com"</string>
+    <string name="share">"Το 1055 Rock Radio τώρα διαθέσιμο και για Android! Κατέβασε το από εδώ: PLAYSTORE_LINK"</string>
 
     <!-- String related to About -->
     <string name="title_activity_about">Σχετικά</string>
     <string name="about_version">Version: </string>
-    <string name="about_email_intent">About:MaterialDesign</string>
-    <string name="about_not_found_email">Not found email app</string>
-    <string name="about_card1_title">Material Design Demo</string>
-    <string name="about_card1_message">Hey, glad to see you! Thanks for using the app.</string>
-    <string name="about_card2_title">Επικοινωνήστε μαζί μου!</string>
+    <string name="about_email_intent">1055 Rock</string>
+    <string name="about_not_found_email">Δεν βρέθηκε εφαρμογή email</string>
+    <string name="about_card1_title">1055 Rock Radio</string>
+    <string name="about_card1_message">Hey, ευχαριστώ που χρησιμοποιείτε την εφαρμογή μου! Stay True and Keep on Rocking!</string>
+    <string name="about_card2_title">Επικοινωνήστε μαζί μου</string>
     <string name="about_google_play">Google Play Store</string>
     <string name="about_email">E-mail</string>
+
+    <!-- String related to Contact -->
+    <string name="contact1">Τρόποι Επικοινωνίας</string>
+    <string name="contact2">✆ ON AIR: 2310 24 1055</string>
+    <string name="contact3">📱 SMS: 6999 24 1055</string>
+    <string name="contact4">☎ OFFICE: 2310 24 3560</string>
+    <string name="contact5">\@ Email: info@1055rock.gr</string>
+    <string name="contact6">\@ Email2: grammateia@1055rock.gr</string>
+
+
+    <!-- String related to Program -->
+    <string name="program1">Weekdays</string>
+
+    <string name="program2">07.00 - 09.00</string>
+    <string name="program3">Κώστας Τζαντζαράς</string>
+    <string name="program4">Απολωρόκ Πρόβατο</string>
+
+    <string name="program5">09.00 - 12.00 </string>
+    <string name="program6">Αλέξης &amp; Νίκος</string>
+    <string name="program7">#ΑθλιοιΓιοι</string>
+
+    <string name="program8">12.00 - 15.00</string>
+    <string name="program9">Λίνα Αντωνιάδου</string>
+    <string name="program10">#panta_allou</string>
+
+    <string name="program11">15.00 - 18.00</string>
+    <string name="program12">Αλέξανδρος Χαριζάνης</string>
+    <string name="program13">Τhe Bondage Family</string>
+
+    <string name="program14">18.00 - 21.00</string>
+    <string name="program15">Γιώργος Γαλάνης</string>
+
+    <string name="program16">21.00 - 23.00</string>
+    <string name="program17">Ελένη Σκάρπου</string>
+    <string name="program18">Ασωτη</string>
+
+    <string name="program19">23:00 - 01:00</string>
+    <string name="program20">Xρ. Γεωργίου, Αρετή Βαλαβ.</string>
+    <string name="program21">X-treme Metal Zone</string>
+
+    <string name="program22">01.00 - 07.00</string>
+    <string name="program23">ο κομπιούτερ μας ο Άη ο Σέβεν</string>
+
+    <string name="program24">Weekends</string>
+
+    <string name="program25">10.00 - 13.00</string>
+    <string name="program26">Κώστας Ταλέας</string>
+    <string name="program27">Ιστορίες για Πόπερς &amp; Rockers</string>
+
+    <string name="program28">13.00 - 16.00</string>
+    <string name="program29">Θωμάς Αρβανίτης</string>
+    <string name="program30">Sex &amp; Drums &amp; Rock \'n 'Roll</string>
+
+    <string name="program31">16.00 - 19.00</string>
+    <string name="program32">\'Eφη Δρογούτη</string>
+    <string name="program33">Εκτός Τόπου και Χρόνου</string>
+
+    <string name="program34">19.00 - 22.00</string>
+    <string name="program35">Κυρ. Μπέρτος - Αλ. Λαμπρίδης</string>
+    <string name="program36">Weekenders</string>
+
 </resources>

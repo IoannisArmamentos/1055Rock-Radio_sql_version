@@ -1,10 +1,17 @@
 package ibanezman192.rocknroll;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationChannelGroup;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.LinkAddress;
 import android.net.NetworkInfo;
@@ -13,9 +20,11 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,17 +35,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.jetradar.desertplaceholder.DesertPlaceholder;
 
+import java.io.IOException;
+
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Switch aSwitch;
+    public static ImageButton ibPlay;
+    public static ImageButton ibStop;
 
+
+    NotificationManager manager;
+    Notification myNotication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +97,11 @@ public class MainMenu extends AppCompatActivity
             alert.show();
         }
 
+        // Set up ta koumpia
+        initializeUIElements();
+
+        // Diadikasia streaming,apo to patima koumpiou kai ola ta alla meta
+        StreamService.startStream();
     }
 
     @Override
@@ -102,22 +123,28 @@ public class MainMenu extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            intent.setClass(this, MainMenu.class);
+            startActivity(intent);
         } else if (id == R.id.nav_program) {
-
+            intent.setClass(this, Program.class);
+            startActivity(intent);
         } else if (id == R.id.nav_producers) {
-
+            intent.setClass(this, Producers.class);
+            startActivity(intent);
         } else if (id == R.id.nav_contact) {
-
-        } else if (id == R.id.nav_settings) {
-            new Test();
+            intent.setClass(this, Contact.class);
+            startActivity(intent);
         } else if (id == R.id.nav_info) {
-//            composeEmail(new String[]{"giannisarmamentos@gmail.com"}, "1055 Rock");
             intent.setClass(this, About.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
             share();
         } else if (id == R.id.nav_exit) {
+            try {
+                StreamService.stopPlaying();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             finish();
         }
 
@@ -134,7 +161,14 @@ public class MainMenu extends AppCompatActivity
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
-    //Gia share pls
+    private void initializeUIElements() {
+        //ImageButtons
+        ibPlay = (ImageButton) findViewById(R.id.Play);
+        ibStop = (ImageButton) findViewById(R.id.Stop);
+        ibStop.setVisibility(View.INVISIBLE);
+        ibStop.setEnabled(false);
+    }
+
     private void share() {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
@@ -143,7 +177,7 @@ public class MainMenu extends AppCompatActivity
         startActivity(sendIntent);
     }
 
-    // gia sxetika
+/*    // gia sxetika
     public void composeEmail(String[] addresses, String subject) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:giannisarmamentos@gmail.com")); // only email apps should handle this
@@ -153,23 +187,6 @@ public class MainMenu extends AppCompatActivity
             startActivity(intent);
         }
     }
-
-/*    // gia settings
-    public void onSwitchClick(View v) {
-        if (aSwitch.isChecked()) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark2));
-            // getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary2));
-
-
-            Toast.makeText(this, "Toggle ON", Toast.LENGTH_SHORT).show();
-        } else {
-            //getWindow().setStatusBarColor();
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-            Toast.makeText(this, "Toggle OFF", Toast.LENGTH_SHORT).show();
-        }
-
-    }*/
-
 
     //gia rate
     /*Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
@@ -185,5 +202,8 @@ public class MainMenu extends AppCompatActivity
         startActivity(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
     }*/
+
+    //Dwste agapi
+
 
 }

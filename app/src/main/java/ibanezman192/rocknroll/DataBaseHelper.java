@@ -213,70 +213,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    // Add your public helper methods to access and get content from the
-    // database.
-    // You could return cursors by doing "return myDataBase.query(....)" so it'd
-    // be easy
-    // to you to create adapters for your views.
-
-/*    public ArrayList<Restaurant> getRestaurantsFromDatabase() {
-        ArrayList<Restaurant> restaurants = new ArrayList<Restaurant>();
-
-        try {
-            Cursor c = myDataBase.rawQuery("SELECT * FROM " + "Restaurants",
-                    null);
-
-            int Column1 = c.getColumnIndex("_id");
-            int Column2 = c.getColumnIndex("Name");
-            int Column3 = c.getColumnIndex("Description");
-            int Column4 = c.getColumnIndex("Phone");
-            int Column5 = c.getColumnIndex("PhoneCosmote");
-            int Column6 = c.getColumnIndex("PhoneVodafone");
-            int Column7 = c.getColumnIndex("PhoneWind");
-            int Column8 = c.getColumnIndex("OpeningHour");
-            int Column9 = c.getColumnIndex("ClosingHour");
-            int Column10 = c.getColumnIndex("CloseDay");
-            int Column11 = c.getColumnIndex("Image");
-            int Column12 = c.getColumnIndex("TrueName");
-            int Column13 = c.getColumnIndex("Facebook");
-            int Column14 = c.getColumnIndex("Address");
-            c.moveToFirst();
-            if (c != null) {
-                // Loop through all Results
-                do {
-                    int id = c.getInt(Column1);
-                    String name = c.getString(Column2);
-                    String description = c.getString(Column3);
-                    String phone = c.getString(Column4);
-                    String phoneCosmote = c.getString(Column5);
-                    String phoneVodafone = c.getString(Column6);
-                    String phoneWind = c.getString(Column7);
-                    String closeDay = c.getString(Column10);
-                    String openingHour = c.getString(Column8);
-                    String closingHour = c.getString(Column9);
-                    String image = c.getString(Column11);
-                    String trueName = c.getString(Column12);
-                    String Facebook = c.getString(Column13);
-                    String Address = c.getString(Column14);
-
-                    restaurants.add(new Restaurant(trueName, name,
-                            description, phone, phoneCosmote, phoneVodafone,
-                            phoneWind, closeDay, openingHour, closingHour,
-                            image, Facebook, Address, false));
-                } while (c.moveToNext());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            myDataBase.close();
-        }
-
-        return restaurants;
-
-    }*/
-
-    public List<Producer> getProducers() {
-        List<Producer> producers = new ArrayList<>();
+    public ArrayList<Producer> getProducers() {
+        ArrayList<Producer> producers = new ArrayList<>();
 
         try {
             Cursor c = myDataBase.rawQuery("SELECT * FROM Producer", null);
@@ -295,6 +233,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                     String showHours = c.getString(Column4);
                     String bio = c.getString(Column5);
                     String imageId = c.getString(Column6);
+
                     Producer tempProducer = new Producer(id, name, show, showHours, bio, imageId);
                     producers.add(tempProducer);
                 } while (c.moveToNext());
@@ -308,42 +247,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return producers;
 
     }
-
-   /* public Menu getMenuFromDatabase(String restaurantTableName) {
-        //  Log.d("Ekdosi Vasis:", "---->" + DATABASE_VERSION);
-        ArrayList<Food> foods = new ArrayList<Food>();
-
-        try {
-            Cursor c = myDataBase.rawQuery("SELECT * FROM "
-                    + restaurantTableName, null);
-
-            int Column1 = c.getColumnIndex("_id");
-            int Column2 = c.getColumnIndex("name");
-            int Column3 = c.getColumnIndex("description");
-            int Column4 = c.getColumnIndex("category");
-            int Column5 = c.getColumnIndex("price");
-            c.moveToFirst();
-
-            if (c != null) {
-                // Loop through all Results
-                do {
-                    int id = c.getInt(Column1);
-                    String name = c.getString(Column2);
-                    String description = c.getString(Column3);
-                    String category = c.getString(Column4);
-                    String price = c.getString(Column5);
-
-                    foods.add(new Food(name, description, category, price));
-                } while (c.moveToNext());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            myDataBase.close();
-        }
-
-        return new Menu(foods);
-
-    }*/
 
 }

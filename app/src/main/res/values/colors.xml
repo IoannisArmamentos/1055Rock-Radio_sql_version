@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorPrimary2">#F44336</color>
-    <color name="colorPrimaryDark2">#D32F2F</color>
+    <color name="colorPrimary2">#3F51B5</color>
+    <color name="colorPrimaryDark2">#303F9F</color>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#eb1c27</color>
+    <color name="colorTrans">#99000000</color>
+
 
 
 

@@ -59,9 +59,6 @@ public class About extends AppCompatActivity implements View.OnClickListener {
         ll_card_about_2_shop.setOnClickListener(this);
         ll_card_about_2_email.setOnClickListener(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_about_this);
-        fab.setOnClickListener(this);
-
     }
 
     @Override
@@ -78,7 +75,7 @@ public class About extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.ll_card_about_2_email:
                 intent.setAction(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse(Constant.EMAIL));
+                intent.setData(Uri.parse("mailto:giannisarmamentos@gmail.com"));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_email_intent));
                 try {
                     startActivity(intent);
@@ -86,14 +83,12 @@ public class About extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(About.this, getString(R.string.about_not_found_email), Toast.LENGTH_SHORT).show();
                 }
                 break;
-
-
-            case R.id.fab_about_this:
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, Constant.SHARE_CONTENT);
-                intent.setType("text/plain");
-                startActivity(intent);
-                break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }
