@@ -23,6 +23,7 @@
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"
             android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Producers">
             <meta-data

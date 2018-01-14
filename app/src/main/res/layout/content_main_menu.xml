@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg3"
+    android:gravity="top"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ibanezman192.rocknroll.MainMenu"
     tools:showIn="@layout/app_bar_main_menu">
